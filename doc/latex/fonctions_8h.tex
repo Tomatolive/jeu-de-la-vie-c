@@ -1,0 +1,293 @@
+\hypertarget{fonctions_8h}{}\doxysection{Référence du fichier fonctions.\+h}
+\label{fonctions_8h}\index{fonctions.h@{fonctions.h}}
+
+
+Fichier d\textquotesingle{}entetes des focntions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Graphe des dépendances par inclusion de fonctions.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{fonctions_8h_a970f38fc391002f89364eabadc39ad20}{allouer}} (int lignes, int colonnes)
+\begin{DoxyCompactList}\small\item\em Fonction qui alloue de la mémoire à une matrice 2D. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8h_ab6bcddfe15d826add503a8e564ebf9a2}{initialiser}} (int $\ast$$\ast$matrice, int lignes, int colonnes)
+\begin{DoxyCompactList}\small\item\em Initialise à 0 les cases de la matrice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8h_a71d20a178466f10f894d9277964f6206}{afficher}} (int $\ast$$\ast$matrice, int lignes, int colonnes)
+\begin{DoxyCompactList}\small\item\em Affiche la matrice. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{fonctions_8h_a3c8b7c1466524a49a001137c35f3b553}{lecture\+Fichier}} (int $\ast$$\ast$matrice, char $\ast$fichier, int $\ast$lignes, int $\ast$colonnes, int $\ast$nb\+Tour, int $\ast$type)
+\begin{DoxyCompactList}\small\item\em Initialise la matrice et les différents paramétrage du jeu contenus dans le fichier texte. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \mbox{\hyperlink{fonctions_8h_a7b52684650c27728f1a2882bf3dfdbdb}{torique}} (int $\ast$$\ast$matrice, int lignes, int colonnes)
+\begin{DoxyCompactList}\small\item\em Ajuste la matrice pour qu\textquotesingle{}elle devienne une matrice torique. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fonctions_8h_a4af45bdcc50d7a293485c7f633295c8e}{nb\+Voisin}} (int $\ast$$\ast$matrice, int ligne, int colonne, int lignes, int colonnes)
+\begin{DoxyCompactList}\small\item\em Compte le nombre de voisin d\textquotesingle{}une cellule. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8h_a57769735b31bbdd59e0d706201e5f1e4}{actualiser}} (int $\ast$$\ast$matrice, int lignes, int colonnes, int type)
+\begin{DoxyCompactList}\small\item\em Actualise le jeu, en mettant à jour l\textquotesingle{}état des cellules. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonctions_8h_a79e30952c8503eb418aca2581d6f82ce}{liberer}} (int $\ast$$\ast$matrice, int colonnes)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée à la matrice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Fichier d\textquotesingle{}entetes des focntions. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{fonctions_8h_a57769735b31bbdd59e0d706201e5f1e4}\label{fonctions_8h_a57769735b31bbdd59e0d706201e5f1e4}} 
+\index{fonctions.h@{fonctions.h}!actualiser@{actualiser}}
+\index{actualiser@{actualiser}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{actualiser()}{actualiser()}}
+{\footnotesize\ttfamily void actualiser (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{lignes,  }\item[{int}]{colonnes,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Actualise le jeu, en mettant à jour l\textquotesingle{}état des cellules. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+{\em type} & différencie le type entre matrice simple et matrice torique \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fonctions_8h_a71d20a178466f10f894d9277964f6206}\label{fonctions_8h_a71d20a178466f10f894d9277964f6206}} 
+\index{fonctions.h@{fonctions.h}!afficher@{afficher}}
+\index{afficher@{afficher}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{afficher()}{afficher()}}
+{\footnotesize\ttfamily void afficher (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{lignes,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Affiche la matrice. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fonctions_8h_a970f38fc391002f89364eabadc39ad20}\label{fonctions_8h_a970f38fc391002f89364eabadc39ad20}} 
+\index{fonctions.h@{fonctions.h}!allouer@{allouer}}
+\index{allouer@{allouer}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{allouer()}{allouer()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ allouer (\begin{DoxyParamCaption}\item[{int}]{lignes,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Fonction qui alloue de la mémoire à une matrice 2D. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+matrice allouée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8h_ab6bcddfe15d826add503a8e564ebf9a2}\label{fonctions_8h_ab6bcddfe15d826add503a8e564ebf9a2}} 
+\index{fonctions.h@{fonctions.h}!initialiser@{initialiser}}
+\index{initialiser@{initialiser}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{initialiser()}{initialiser()}}
+{\footnotesize\ttfamily void initialiser (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{lignes,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Initialise à 0 les cases de la matrice. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fonctions_8h_a3c8b7c1466524a49a001137c35f3b553}\label{fonctions_8h_a3c8b7c1466524a49a001137c35f3b553}} 
+\index{fonctions.h@{fonctions.h}!lectureFichier@{lectureFichier}}
+\index{lectureFichier@{lectureFichier}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{lectureFichier()}{lectureFichier()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ lecture\+Fichier (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{char $\ast$}]{fichier,  }\item[{int $\ast$}]{lignes,  }\item[{int $\ast$}]{colonnes,  }\item[{int $\ast$}]{nb\+Tour,  }\item[{int $\ast$}]{type }\end{DoxyParamCaption})}
+
+
+
+Initialise la matrice et les différents paramétrage du jeu contenus dans le fichier texte. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée et initialisée à 0 \\
+\hline
+{\em fichier} & nom ou adresse du fichier contenant le paramétrage du jeu \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+{\em nb\+Tour} & nombre de tour effectué par le jeu \\
+\hline
+{\em type} & différencie le type entre matrice simple et matrice torique \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+matrice initialisée prête pour le jeu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8h_a79e30952c8503eb418aca2581d6f82ce}\label{fonctions_8h_a79e30952c8503eb418aca2581d6f82ce}} 
+\index{fonctions.h@{fonctions.h}!liberer@{liberer}}
+\index{liberer@{liberer}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{liberer()}{liberer()}}
+{\footnotesize\ttfamily void liberer (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée à la matrice. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{fonctions_8h_a4af45bdcc50d7a293485c7f633295c8e}\label{fonctions_8h_a4af45bdcc50d7a293485c7f633295c8e}} 
+\index{fonctions.h@{fonctions.h}!nbVoisin@{nbVoisin}}
+\index{nbVoisin@{nbVoisin}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{nbVoisin()}{nbVoisin()}}
+{\footnotesize\ttfamily int nb\+Voisin (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{ligne,  }\item[{int}]{colonne,  }\item[{int}]{lignes,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Compte le nombre de voisin d\textquotesingle{}une cellule. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em ligne} & ligne de la cellule \\
+\hline
+{\em colonne} & colonne de la cellule \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+nombre de voisin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fonctions_8h_a7b52684650c27728f1a2882bf3dfdbdb}\label{fonctions_8h_a7b52684650c27728f1a2882bf3dfdbdb}} 
+\index{fonctions.h@{fonctions.h}!torique@{torique}}
+\index{torique@{torique}!fonctions.h@{fonctions.h}}
+\doxysubsubsection{\texorpdfstring{torique()}{torique()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ torique (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrice,  }\item[{int}]{lignes,  }\item[{int}]{colonnes }\end{DoxyParamCaption})}
+
+
+
+Ajuste la matrice pour qu\textquotesingle{}elle devienne une matrice torique. 
+
+\begin{DoxyAuthor}{Auteur}
+Thomas Brasdefer \href{mailto:brasdefert@gmail.com}{\texttt{ brasdefert@gmail.\+com}} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29/10/2023 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice} & matrice 2D allouée \\
+\hline
+{\em lignes} & nombre de ligne de la matrice \\
+\hline
+{\em colonnes} & nombre de colonne de la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+matrice torique 
+\end{DoxyReturn}

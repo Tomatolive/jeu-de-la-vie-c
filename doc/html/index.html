@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu de la vie: Accueil</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jeu de la vie
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Accueil </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="un"></a>
+Introduction</h1>
+<p>Ce programme C est une reproduction du jeu de la vie.<br  />
+ Le programme ne fonctionne que dans un terminal, et nécessite d'utiliser des fichiers textes pour le configurer.</p>
+<h1><a class="anchor" id="deux"></a>
+Structure de fichier</h1>
+<p>Le projet comporte plusieurs répertoires : un répertoire source, un répertoire pour l'exécutable et un répertoire pour la documentation doxygen.<br  />
+ Le répertoire source contient les fichiers sources du programme, ce sont ces fichiers qu'il faudra compiler si l'exécutable est supprimé.<br  />
+ Par défaut, le répertoire bin contient déjà l'exécutable.<br  />
+ </p>
+<h1><a class="anchor" id="trois"></a>
+Compilation du programme</h1>
+<p>Si, pour une quelconque raison, vous devez recompiler le programme, voici un makefile simple qui vous le permettra : </p><pre class="fragment">srcdir = ./src/
+bindir = ./bin/
+SRC = $(wildcard $(srcdir)*.c)
+OBJ = $(subst $(srcdir),$(bindir),$(SRC:.c=.o))
+PROG = $(bindir)exe
+CC = gcc -Wall -g
+
+all : $(PROG)
+$(PROG) : $(OBJ)
+    @echo 'Compilation de l executable'
+    $(CC) $^ -o $@ -lm
+./bin/%.o : ./src/%.c
+    @echo 'Compilation des fichiers objets'
+    $(CC) -c $^ -o $@ -lm</pre><p> À noter que ce makefile doit se trouver dans le répertoire parent de src et bin.<br  />
+ De même, faites bien attention à bien placer des tabulations là où elles sont nécessaires, makefile étant très sensible aux espaces. Si le message d'erreur "missing separator. Stop" apparaît, replacer toutes les tabulations manuellement.</p>
+<h1><a class="anchor" id="quatre"></a>
+Structure du fichier de configuration</h1>
+<p>Le fichier doit s'ouvrir sur deux nombres, représentant la longueur et la largueur de la matrice.<br  />
+ Ensuite se trouve les valeurs de la matrice.<br  />
+ Puis nous trouvons un nombre répresentant les tours à effectuer.<br  />
+ Enfin se trouve soit 0 soit 1, nombe qui demande au programme d'utiliser une matrice simple ou une matrice torique (respectivement).<br  />
+ Voici un exemple : </p><pre class="fragment">13 13
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0 0 0 0 0
+0 1 1 1 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+100
+0</pre><p> Attention : un fichier mal structuré ou mal configuré fera planter le programme.</p>
+<h1><a class="anchor" id="cinq"></a>
+Execution du programme</h1>
+<p>Le programme s'execute en utilisant en argument le nom (ne pas oublier l'extension) ou l'adresse (relative ou absolue) du programme.<br  />
+ Quelques exemples (avec le fichier placé dans le répertoire parent et l'exécutable dans le répertoire bin): </p><pre class="fragment">- Depuis le répertoire parent : ./bin/exe fichier.txt
+- Depuis le répertoire bin : ./exe ../fichier.txt</pre> </div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

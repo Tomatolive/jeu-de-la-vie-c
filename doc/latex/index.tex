@@ -1,0 +1,48 @@
+\hypertarget{index_un}{}\doxysection{Introduction}\label{index_un}
+Ce programme C est une reproduction du jeu de la vie.~\newline
+ Le programme ne fonctionne que dans un terminal, et nécessite d\textquotesingle{}utiliser des fichiers textes pour le configurer.\hypertarget{index_deux}{}\doxysection{Structure de fichier}\label{index_deux}
+Le projet comporte plusieurs répertoires \+: un répertoire source, un répertoire pour l\textquotesingle{}exécutable et un répertoire pour la documentation doxygen.~\newline
+ Le répertoire source contient les fichiers sources du programme, ce sont ces fichiers qu\textquotesingle{}il faudra compiler si l\textquotesingle{}exécutable est supprimé.~\newline
+ Par défaut, le répertoire bin contient déjà l\textquotesingle{}exécutable.~\newline
+ \hypertarget{index_trois}{}\doxysection{Compilation du programme}\label{index_trois}
+Si, pour une quelconque raison, vous devez recompiler le programme, voici un makefile simple qui vous le permettra \+: \begin{DoxyVerb}srcdir = ./src/
+bindir = ./bin/
+SRC = $(wildcard $(srcdir)*.c)
+OBJ = $(subst $(srcdir),$(bindir),$(SRC:.c=.o))
+PROG = $(bindir)exe
+CC = gcc -Wall -g
+
+all : $(PROG)
+$(PROG) : $(OBJ)
+    @echo 'Compilation de l executable'
+    $(CC) $^ -o $@ -lm
+./bin/%.o : ./src/%.c
+    @echo 'Compilation des fichiers objets'
+    $(CC) -c $^ -o $@ -lm\end{DoxyVerb}
+ À noter que ce makefile doit se trouver dans le répertoire parent de src et bin.~\newline
+ De même, faites bien attention à bien placer des tabulations là où elles sont nécessaires, makefile étant très sensible aux espaces. Si le message d\textquotesingle{}erreur \char`\"{}missing separator. Stop\char`\"{} apparaît, replacer toutes les tabulations manuellement.\hypertarget{index_quatre}{}\doxysection{Structure du fichier de configuration}\label{index_quatre}
+Le fichier doit s\textquotesingle{}ouvrir sur deux nombres, représentant la longueur et la largueur de la matrice.~\newline
+ Ensuite se trouve les valeurs de la matrice.~\newline
+ Puis nous trouvons un nombre répresentant les tours à effectuer.~\newline
+ Enfin se trouve soit 0 soit 1, nombe qui demande au programme d\textquotesingle{}utiliser une matrice simple ou une matrice torique (respectivement).~\newline
+ Voici un exemple \+: \begin{DoxyVerb}13 13
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0 0 0 0 0
+0 1 1 1 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+100
+0\end{DoxyVerb}
+ Attention \+: un fichier mal structuré ou mal configuré fera planter le programme.\hypertarget{index_cinq}{}\doxysection{Execution du programme}\label{index_cinq}
+Le programme s\textquotesingle{}execute en utilisant en argument le nom (ne pas oublier l\textquotesingle{}extension) ou l\textquotesingle{}adresse (relative ou absolue) du programme.~\newline
+ Quelques exemples (avec le fichier placé dans le répertoire parent et l\textquotesingle{}exécutable dans le répertoire bin)\+: \begin{DoxyVerb}- Depuis le répertoire parent : ./bin/exe fichier.txt
+- Depuis le répertoire bin : ./exe ../fichier.txt\end{DoxyVerb}
+ 
