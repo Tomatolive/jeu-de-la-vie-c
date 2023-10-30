@@ -93,8 +93,10 @@ $(PROG) : $(OBJ)
 int main(int argc, char** argv) { 
 	/* Si le programme est appelé avec au moins un argument */
 	if(argc > 1) {
+		/* Pointeur sur le fichier */
+		FILE *fp = fopen(argv[1], "r");
 		/* Si le fichier existe */
-		if(fopen(argv[1], "r") != NULL) {
+		if(fp != NULL) {
 			/* Itérateur */
 			int i;
 			/* On déclare la matrice, son nombre de ligne, de colonne, le nombre de tour à effectuer et le type de matrice */
@@ -120,6 +122,8 @@ int main(int argc, char** argv) {
 			printf("Erreur : le fichier n'exite pas à cette adresse.\nVeuillez consulter la documentation pour plus d'aide.\n");
 			return(EXIT_FAILURE);
 		}
+		fclose(fp);
+		fp = NULL;
 	} else {
 		printf("Erreur : Trop peu d'argument.\nVeuillez consulter la documentation pour plus d'aide.\n");
 		return(EXIT_FAILURE);
