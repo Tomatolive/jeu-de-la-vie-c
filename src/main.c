@@ -117,13 +117,12 @@ int main(int argc, char** argv) {
 			}
 			/* On libère la matrice */
 			liberer(matrice, colonnes);
+            fclose(fp);
 			return(EXIT_SUCCESS);
 		} else {
 			printf("Erreur : le fichier n'exite pas à cette adresse.\nVeuillez consulter la documentation pour plus d'aide.\n");
 			return(EXIT_FAILURE);
 		}
-		fclose(fp);
-		fp = NULL;
 	} else {
 		printf("Erreur : Trop peu d'argument.\nVeuillez consulter la documentation pour plus d'aide.\n");
 		return(EXIT_FAILURE);
